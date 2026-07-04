@@ -3,7 +3,7 @@
 Official marketing website for **iSET** (International Skill Enhancement Training) by **IAME** (Ideal Association for Minority Education).
 
 - **Live site:** [https://isetonline.in](https://isetonline.in)
-- **GitHub:** [https://github.com/sarvindP/iset_website](https://github.com/sarvindP/iset_website)
+- **GitHub:** [https://github.com/srlsec/iset-static-website](https://github.com/srlsec/iset-static-website)
 
 ---
 
@@ -54,11 +54,11 @@ npm -v
 ### 1. Clone or download the repo
 
 ```bash
-git clone https://github.com/sarvindP/iset_website.git
-cd iset_website
+git clone https://github.com/srlsec/iset-static-website
+cd iset-static-website
 ```
 
-If you already have the folder locally, open a terminal in `iset-website/` and continue from step 2.
+If you already have the folder locally, open a terminal in `iset-static-website/` and continue from step 2.
 
 ### 2. Install dependencies
 
