@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'bricolage-grotesque', system-ui, sans-serif;
+  --font-body: 'inter-variable', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-text bg-white leading-relaxed;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display leading-tight;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+
+  p {
+    @apply font-body text-base text-muted max-w-[68ch];
+  }
+}
+
+/* Card icon */
+.card-icon {
+  @apply w-12 h-12 rounded-[10px] flex items-center justify-center mb-5 bg-navy;
+}
+
+.card-icon svg {
+  @apply text-white;
+}
+
+/* Syllabus band list bullets */
+.syllabus-band li::before {
+  content: '›  ';
+  @apply text-sky font-bold;
+}
+
+/* Intro visual watermark */
+.intro-visual::after {
+  content: 'iSET';
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Stats marquee — right to left */
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 35s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+}
+
+/* Footer link underline — in from left, out to right */
+.footer-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.35s ease;
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-link::after {
+    transition: none;
+  }
+
+  .footer-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* About img box watermark */
+.about-img-box::after {
+  content: '20';
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  font-family: var(--font-display);
+  font-size: 10rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 1;
+}
+
+.about-img-box li::before {
+  content: '✦';
+  @apply text-sky text-[0.7rem];
+}
+
+/* Curriculum subject bullets */
+.subject-block li::before {
+  content: '—';
+  @apply text-sky font-bold shrink-0;
+}
+
+/* Timeline */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #3b82c4, #5a9ad4, #0d1b3e);
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 28px;
+  }
+}
+
+/* Mobile typography — balanced scale for small screens */
+@media (max-width: 767px) {
+  h1 {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+  }
+
+  h2 {
+    font-size: clamp(1.375rem, 4.8vw, 1.875rem);
+  }
+
+  h3 {
+    font-size: clamp(1.0625rem, 3.2vw, 1.25rem);
+  }
+
+  h4 {
+    font-size: 0.9375rem;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+
+  .intro-visual::after {
+    font-size: 4.5rem;
+    bottom: -20px;
+    right: -10px;
+  }
+
+  .about-img-box::after {
+    font-size: 5.5rem;
+    bottom: -24px;
+    right: -10px;
+  }
+}

@@ -1,0 +1,14 @@
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+# Custom 404 page
+ErrorDocument 404 /404.html
+
+# Remove trailing index.html from URLs (optional, keeps URLs clean)
+RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# Prevent directory listing
+Options -Indexes
