@@ -1,5 +1,40 @@
 # iSET Website
 
+Static Next.js website for iSET.
+
+## Requirements
+
+- Node.js 20+
+- npm
+
+## Setup
+
+```bash
+npm install
+```
+
+## Run in development
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Run production build locally
+
+```bash
+npm run build
+npx serve out
+```
+
+This project is a static export. Do not use `npm start`.
+
+## Deploy
+
+Upload the generated `out/` folder to your static hosting (Apache, cPanel, Nginx, Vercel static output, etc.).
+# iSET Website
+
 Official marketing website for **iSET** (International Skill Enhancement Training) by **IAME** (Ideal Association for Minority Education).
 
 - **Live site:** [https://isetonline.in](https://isetonline.in)
