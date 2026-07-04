@@ -1,35 +1,5 @@
 # iSET Website
 
-Simple static website built with Next.js.
-
-## Setup
-
-```bash
-npm install
-```
-
-## Run (development)
-
-```bash
-npm run dev
-```
-
-Open `http://localhost:3000`.
-
-## Run (production preview)
-
-```bash
-npm run build
-npx serve out
-```
-
-This project is static export. Do not use `npm start`.
-
-## Deploy
-
-Upload the `out/` folder to your static hosting.
-# iSET Website
-
 Static Next.js website for iSET.
 
 ## Requirements
