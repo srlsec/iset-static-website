@@ -54,7 +54,7 @@ npm -v
 ### 1. Clone or download the repo
 
 ```bash
-git clone https://github.com/srlsec/iset-static-website
+git clone https://github.com/srlsec/iset-static-website.git
 cd iset-static-website
 ```
 
