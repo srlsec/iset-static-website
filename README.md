@@ -22,6 +22,18 @@ To stop the server, press `Ctrl+C` in the terminal.
 
 ---
 
+## Production run command
+
+Use this project in production mode with:
+
+```bash
+npm run build && npx serve out
+```
+
+This project uses static export, so `npm start` is not used here.
+
+---
+
 ## Tech stack
 
 
