@@ -1,7 +1,13 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  outputFileTracingRoot: __dirname,
   experimental: {
     // Avoids a Windows dev-only bug in Next.js 15.5+ devtools (segment-explorer-node).
     devtoolSegmentExplorer: false,

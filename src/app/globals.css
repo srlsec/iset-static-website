@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-display: 'bricolage-grotesque', system-ui, sans-serif;
-  --font-body: 'inter-variable', system-ui, sans-serif;
+  --font-display: system-ui, sans-serif;
+  --font-body: system-ui, sans-serif;
 }
 
 @layer base {

@@ -12,11 +12,13 @@ type PageMetadataOptions = {
 };
 
 export function buildPageMetadata({ title, description, path }: PageMetadataOptions): Metadata {
+  const canonical = path === '/' ? '/' : `${path}/`;
+
   return {
     title,
     description,
     alternates: {
-      canonical: path,
+      canonical,
     },
   };
 }

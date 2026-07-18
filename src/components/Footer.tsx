@@ -2,6 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const REGISTER_URL = 'https://iameonline.com/login/index';
+const BROCHURE_URL = '/brochures/iset-brochure.pdf';
+const MAPS_URL =
+  'https://www.google.com/maps/dir//Ideal+Association+For+Minority+Education,+4th+Floor,+Markaz+Complex+JafferKhan+Colony+Rd,+Mavoor+Rd,+Opposite+New+Bus+Stand,+Arayidathupalam,+Kozhikode,+Kerala+673004/@12.2159104,75.4221056,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba65948f227aa45:0xe070500382808ff4!2m2!1d75.7878822!2d11.2596921?entry=ttu';
 
 const SOCIAL_LINKS = [
   {
@@ -24,6 +27,22 @@ const SOCIAL_LINKS = [
     icon: '/social/youtube.png',
     boxClassName: 'h-8 w-[46px]',
     imageClassName: 'object-contain',
+  },
+] as const;
+
+const OFFICES = [
+  {
+    label: 'New Delhi',
+    address: '#1784 Kalan Mahal Dariya Ganj, New Delhi, 110002',
+  },
+  {
+    label: 'Kozhikode',
+    address:
+      '4th Floor, Markaz Complex, Jaffer Khan Colony Rd, Mavoor Rd, Opposite New Bus Stand, Arayidathupalam, Kozhikode, Kerala, 673004',
+  },
+  {
+    label: 'Mysore',
+    address: '#216/1, 2nd Stage, North Block Shanthi Nagar, Mysore, Karnataka',
   },
 ] as const;
 
@@ -71,7 +90,6 @@ export default function Footer() {
                 { href: '/', label: 'Home' },
                 { href: '/about', label: 'About iSET' },
                 { href: '/curriculum', label: 'Curriculum' },
-                { href: '/gallery', label: 'Gallery' },
                 { href: '/history', label: 'History' },
                 { href: '/question-bank', label: 'Question Bank' },
               ].map(({ href, label }) => (
@@ -90,17 +108,16 @@ export default function Footer() {
             </p>
             <ul className="list-none flex flex-col gap-2.5">
               {[
-                { href: 'https://iameonline.com/iset_previous', label: 'Previous Questions' },
-                { href: 'https://iameonline.com/syllabus', label: 'Syllabus' },
-                { href: 'https://iameonline.com/uploads/brochures/112025/23d3f46dca8e935ffba50080f5242b67.pdf', label: 'Download Brochure' },
-                { href: 'https://iameonline.com/notifications', label: 'Notifications' },
-                { href: REGISTER_URL, label: 'Register Now' },
-              ].map(({ href, label }) => (
+                { href: 'https://iameonline.com/iset_previous', label: 'Previous Questions', external: true },
+                { href: 'https://iameonline.com/syllabus', label: 'Syllabus', external: true },
+                { href: BROCHURE_URL, label: 'Download Brochure', external: false },
+                { href: 'https://iameonline.com/notifications', label: 'Notifications', external: true },
+                { href: REGISTER_URL, label: 'Register Now', external: true },
+              ].map(({ href, label, external }) => (
                 <li key={href}>
                   <a
                     href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="footer-link text-[0.8125rem] md:text-[0.88rem] text-white/65 transition-colors duration-250 hover:text-white"
                   >
                     {label}
@@ -114,13 +131,17 @@ export default function Footer() {
             <p className="font-body text-[0.8125rem] md:text-[0.72rem] font-bold tracking-[0.12em] md:tracking-[0.15em] uppercase text-sky mb-4">
               Contact
             </p>
-            <div className="flex gap-2.5 items-start text-[0.8125rem] md:text-[0.88rem] text-white/65 mb-2.5">
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span>4th Floor, Markaz Complex, Mavoor Road, Calicut, Kerala, India-673004</span>
-            </div>
+            {OFFICES.map((office) => (
+              <div key={office.label} className="flex gap-2.5 items-start text-[0.8125rem] md:text-[0.88rem] text-white/65 mb-3">
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>
+                  <strong className="text-white/80">{office.label}:</strong> {office.address}
+                </span>
+              </div>
+            ))}
             <div className="flex gap-2.5 items-start text-[0.8125rem] md:text-[0.88rem] text-white/65 mb-2.5">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -134,15 +155,18 @@ export default function Footer() {
               </svg>
               <span>mail@iameonline.com</span>
             </div>
-            <div className="mt-2 rounded overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.0232835344486!2d75.78530727486176!3d11.259697350094159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65948f227aa45%3A0xe070500382808ff4!2sIdeal%20Association%20For%20Minority%20Education!5e0!3m2!1sen!2sin!4v1686496858568!5m2!1sen!2sin"
-                allowFullScreen
-                loading="lazy"
-                title="iSET Location"
-                className="w-full h-40 border-none"
-              />
-            </div>
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[0.8125rem] md:text-[0.88rem] text-sky transition-colors duration-250 hover:text-white mt-1"
+            >
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              View Kozhikode office on Google Maps
+            </a>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 const STATS = [
   { num: '1.1 Million+', label: 'Students Benefited' },
-  { num: '20 Years', label: 'Of Excellence' },
+  { num: '21 Years', label: 'Of Excellence' },
   { num: '400+', label: 'Member Schools' },
   { num: 'LKG – XII', label: 'All Grades Eligible' },
 ] as const;

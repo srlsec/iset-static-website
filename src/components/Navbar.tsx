@@ -9,7 +9,6 @@ const navLinks: { href: string; label: string }[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/curriculum', label: 'Curriculum' },
-  { href: '/gallery', label: 'Gallery' },
   { href: '/history', label: 'History' },
   { href: '/question-bank', label: 'Question Bank' },
 ];

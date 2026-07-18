@@ -4,15 +4,15 @@ import { buildPageMetadata } from '@/lib/metadata';
 const REGISTER_URL = 'https://iameonline.com/login/index';
 
 export const metadata = buildPageMetadata({
-  title: 'The History of iSET — Two Decades of Impact',
+  title: 'The History of iSET — Over 21 Years of Impact',
   description:
-    'Explore the full history of iSET — founding milestones, multi-state growth, Grand Finale highlights, and over 20 years of trusted academic excellence.',
+    'Explore the full history of iSET — founding milestones, multi-state growth, TalentX Summit highlights, and over 21 years of trusted academic excellence.',
   path: '/history',
 });
 
 const achievements = [
   {
-    num: '20+',
+    num: '21+',
     label: 'Years Conducted',
     icon: (
       <>
@@ -56,8 +56,8 @@ const achievements = [
     ),
   },
   {
-    num: 'Gold',
-    label: 'Gold Coin — Top Prize at Grand Finale',
+    num: 'TalentX',
+    label: 'TalentX Summit — Top Prize at Calicut',
     icon: (
       <>
         <circle cx="12" cy="8" r="7" />
@@ -67,7 +67,7 @@ const achievements = [
   },
   {
     num: '3 Levels',
-    label: 'Prelims → LTS/UTS → Grand Finale',
+    label: 'Prelims → LTS/UTS → TalentX Summit',
     icon: (
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     ),
@@ -115,7 +115,7 @@ const timelineItems = [
     side: 'right',
     tag: 'Now Open',
     title: 'iSET — Register Today',
-    desc: 'The latest edition of iSET continues the 20-year legacy. Prelims on November 7, 2026 → LTS & UTS on December 5, 2026 → Grand Finale (TalentX Summit) on December 30, 2026, Calicut. Open to all students LKG–XII in IAME member schools.',
+    desc: 'The latest edition of iSET continues the 21-year legacy. Prelims on November 7, 2026 → LTS & UTS on December 5, 2026 → TalentX Summit on December 30, 2026, Calicut. Open to all students LKG–XII in IAME member schools.',
     highlight: true,
     showRegister: true,
   },
@@ -126,7 +126,7 @@ export default function HistoryPage() {
     <>
       <PageHero
         title="History of iSET"
-        description="Two decades of building academic excellence across India."
+        description="Over 21 years of building academic excellence across India."
         breadcrumbLabel="History"
       />
 

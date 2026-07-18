@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /gallery/
+
+Host: isetonline.in
+Sitemap: https://isetonline.in/sitemap.xml

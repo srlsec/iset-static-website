@@ -11,7 +11,7 @@ export const metadata = buildPageMetadata({
 
 const formatCards = [
   { tag: 'Format', num: 'MCQ', label: 'Multiple Choice Questions\n4 options, 1 correct answer' },
-  { tag: 'For Grade VI+', num: 'OMR', label: 'Optical Mark Recognition\nAnswer sheets for fast evaluation' },
+  { tag: 'For Grade 3+', num: 'OMR', label: 'Optical Mark Recognition\nAnswer sheets for fast evaluation' },
   { tag: 'Duration', num: '60', label: 'Minutes per paper\nTimed competitive format' },
   { tag: 'Offline', num: '3', label: 'Levels of examination\nProgressive difficulty' },
 ];
@@ -102,8 +102,8 @@ const sampleSections = [
     ],
   },
   {
-    badge: 'Grade VIII – XII — Senior Secondary',
-    desc: 'Advanced reasoning, data interpretation, and analytical questions for senior students.',
+    badge: 'Grade VIII – X — Secondary',
+    desc: 'Advanced reasoning, data interpretation, and analytical questions for secondary students.',
     questions: [
       {
         text: (
@@ -141,6 +141,42 @@ const sampleSections = [
       },
     ],
   },
+  {
+    badge: 'XI – XII (Common Group) — Higher Secondary',
+    desc: 'Higher secondary questions covering language, numerical ability, social sciences, and current affairs.',
+    questions: [
+      {
+        text: (
+          <>
+            Which article of the Indian Constitution deals with the abolition of untouchability?
+            <br />
+            <em className="text-muted text-[0.85rem]">A) Article 14 &nbsp; B) Article 17 &nbsp; C) Article 21 &nbsp; D) Article 32</em>
+          </>
+        ),
+        type: 'Civics — Constitutional Awareness',
+      },
+      {
+        text: (
+          <>
+            If the cost price of 20 articles equals the selling price of 16 articles, what is the profit percentage?
+            <br />
+            <em className="text-muted text-[0.85rem]">A) 20% &nbsp; B) 25% &nbsp; C) 30% &nbsp; D) 35%</em>
+          </>
+        ),
+        type: 'Numerical Ability — Commercial Mathematics',
+      },
+      {
+        text: (
+          <>
+            Which layer of the atmosphere contains the ozone layer that protects Earth from harmful UV radiation?
+            <br />
+            <em className="text-muted text-[0.85rem]">A) Troposphere &nbsp; B) Stratosphere &nbsp; C) Mesosphere &nbsp; D) Thermosphere</em>
+          </>
+        ),
+        type: 'General Science — Environmental Awareness',
+      },
+    ],
+  },
 ];
 
 const subjectBreakdown = [
@@ -148,7 +184,7 @@ const subjectBreakdown = [
   { name: 'Mathematics', width: '80%', detail: 'Mental math, problem solving' },
   { name: 'Science', width: '80%', detail: 'Environmental, basic science' },
   { name: 'Logical Reasoning', width: '80%', detail: 'Patterns, analogy, sequences' },
-  { name: 'General Awareness', width: '80%', detail: 'Current affairs (Avenir), life skills' },
+  { name: 'General Awareness', width: '80%', detail: 'Current affairs & GK, life skills' },
 ];
 
 export default function QuestionBankPage() {

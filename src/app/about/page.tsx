@@ -2,11 +2,12 @@ import PageHero from '@/components/PageHero';
 import { buildPageMetadata } from '@/lib/metadata';
 
 const REGISTER_URL = 'https://iameonline.com/login/index';
+const COMPETITIVE_EXAMS = 'NEET, JEE, NTSE, Olympiads, IIS, CLAT, SSC, UPSC, and PSC';
 
 export const metadata = buildPageMetadata({
-  title: 'About iSET — 20+ Years of Academic Excellence',
+  title: 'About iSET — 21+ Years of Academic Excellence',
   description:
-    'Learn about iSET and its mission to empower students LKG to Class XII through structured competitive exams, gold coin awards, and over 20 years of excellence.',
+    'Learn about iSET and its mission to empower students LKG to Class XII through structured competitive exams, TalentX Summit recognition, and over 21 years of excellence.',
   path: '/about',
 });
 
@@ -15,7 +16,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="About iSET"
-        description="Two decades of transforming how students learn, compete, and grow."
+        description="21 years completed — entering the 22nd year of transforming how students learn, compete, and grow."
         breadcrumbLabel="About"
       />
 
@@ -27,12 +28,12 @@ export default function AboutPage() {
               <div className="text-white/60 text-[0.8125rem] md:text-[0.9rem] mb-6 md:mb-8">students benefited since inception</div>
               <ul className="list-none">
                 {[
-                  'Over 20 years of academic excellence',
+                  '21 years completed — entering the 22nd year of academic excellence',
                   'More than 400 member schools across India',
                   'Open to all grades: LKG to Class XII',
                   '3-level competitive exam structure',
                   'Affiliated with CBSE, ICSE, IGCSE & State boards',
-                  'Gold Coin awards at the Grand Finale',
+                  'TalentX Summit recognition for top performers',
                 ].map((item) => (
                   <li
                     key={item}
@@ -49,13 +50,13 @@ export default function AboutPage() {
               </span>
               <h2 className="mb-4 text-navy">What is iSET?</h2>
               <p className="mb-4 max-w-none">
-                iSET — International Skill Enhancement Training — is a flagship competitive exam programme. For over 20 years, it has been a beacon of academic
+                iSET — International Skill Enhancement Training — is a flagship competitive exam programme. With 21 years completed and entering its 22nd year, it has been a beacon of academic
                 excellence, providing students with a structured platform to develop analytical thinking, logical
                 reasoning, and conceptual clarity.
               </p>
               <p className="mb-4 max-w-none">
                 Over 1.1 million students have benefited from this programme, gaining the confidence to excel in
-                academics and competitive examinations alike. iSET is not just a test — it is an opportunity to unlock
+                academics and competitive examinations alike — including {COMPETITIVE_EXAMS}. iSET is not just a test — it is an opportunity to unlock
                 the limitless potential of every student.
               </p>
               <p className="max-w-none">
@@ -116,16 +117,16 @@ export default function AboutPage() {
                 },
               ].map((card) => (
                 <div key={card.title} className="bg-white border border-border rounded-[10px] p-6 shadow-card">
-                    <div className="flex gap-3 items-center mb-2">
-                      <div
-                        className={`w-9 h-9 rounded-lg ${card.bg} flex items-center justify-center text-white font-bold text-[0.85rem]`}
-                      >
-                        {card.letter}
-                      </div>
-                      <h4 className="text-navy text-[0.85rem] uppercase tracking-[0.05em]">{card.title}</h4>
+                  <div className="flex gap-3 items-center mb-2">
+                    <div
+                      className={`w-9 h-9 rounded-lg ${card.bg} flex items-center justify-center text-white font-bold text-[0.85rem]`}
+                    >
+                      {card.letter}
                     </div>
-                    <p className={`max-w-none ${card.textClass}`}>{card.text}</p>
+                    <h4 className="text-navy text-[0.85rem] uppercase tracking-[0.05em]">{card.title}</h4>
                   </div>
+                  <p className={`max-w-none ${card.textClass}`}>{card.text}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -154,7 +155,7 @@ export default function AboutPage() {
               },
               {
                 title: '3-Level Progressive Structure',
-                desc: 'Prelims at school, LTS/UTS district level, and a Grand Finale — building competence and confidence step by step.',
+                desc: 'Prelims at school, LTS/UTS district level, and the TalentX Summit — building competence and confidence step by step.',
                 icon: (
                   <>
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -163,8 +164,8 @@ export default function AboutPage() {
                 ),
               },
               {
-                title: 'Prestigious Gold Coin Awards',
-                desc: 'Grand Finale winners are awarded gold coin awards, trophies, and certificates — tangible recognition of achievement.',
+                title: 'TalentX Summit Recognition',
+                desc: 'Top performers at the TalentX Summit receive trophies, certificates, and prestigious recognition — tangible achievement at the national stage.',
                 icon: (
                   <>
                     <circle cx="12" cy="8" r="7" />
@@ -173,13 +174,13 @@ export default function AboutPage() {
                 ),
               },
               {
-                title: '20+ Years of Credibility',
-                desc: 'Two decades of consistent, trusted operation with a track record that top schools and families rely upon.',
+                title: '21+ Years of Credibility',
+                desc: '21 years completed — entering the 22nd year of consistent, trusted operation with a track record that top schools and families rely upon.',
                 icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />,
               },
               {
                 title: 'Scholarship Opportunities',
-                desc: 'Students who score 80%+ in LTS/UTS (Grade IV and VII) qualify for scholarship awards, encouraging high performance.',
+                desc: 'Students who score 80%+ in iSET qualify for LTS (Grade IV) and UTS (Grade VII), with scholarship awards encouraging high performance.',
                 icon: (
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                 ),
@@ -196,16 +197,16 @@ export default function AboutPage() {
               },
             ].map((b) => (
               <div key={b.title} className="flex gap-4 items-start p-5 bg-cream rounded-[10px]">
-                  <div className="shrink-0 w-11 h-11 rounded-[10px] bg-navy flex items-center justify-center text-white">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      {b.icon}
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-navy mb-1 text-base">{b.title}</h4>
-                    <p className="text-[0.8125rem] md:text-[0.88rem] max-w-none">{b.desc}</p>
-                  </div>
+                <div className="shrink-0 w-11 h-11 rounded-[10px] bg-navy flex items-center justify-center text-white">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    {b.icon}
+                  </svg>
                 </div>
+                <div>
+                  <h4 className="text-navy mb-1 text-base">{b.title}</h4>
+                  <p className="text-[0.8125rem] md:text-[0.88rem] max-w-none">{b.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -232,7 +233,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <p className="mt-5 text-white/55 max-w-none">
-                The examination is conducted in Offline Mode. For Grade VI and above, answers are marked on OMR sheets.
+                The examination is conducted in Offline Mode. For Grade 3 and above, answers are marked on OMR sheets.
               </p>
             </div>
             <div className="hidden md:block w-px self-stretch bg-white/30" aria-hidden="true" />
